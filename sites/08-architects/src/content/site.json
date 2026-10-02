@@ -1,0 +1,85 @@
+{
+  "businessName": "Traço Norte Arquitetura",
+  "reference": "R8",
+  "seo": {
+    "title": "Traço Norte Arquitetura | Escritório de arquitetura",
+    "description": "Escritório de arquitetura especializado em projetos residenciais, comerciais e de interiores. Conheça nossos projetos."
+  },
+  "sections": [
+    {
+      "id": "top-banner",
+      "text": "Conheça nosso serviço de [TODO]",
+      "link": { "label": "Saiba mais", "href": "[TODO]" }
+    },
+    {
+      "id": "header",
+      "logoText": "Traço Norte",
+      "links": ["Projetos", "Artigos", "Serviços", "Sobre"],
+      "cta": { "label": "Fale conosco", "href": "/contato" }
+    },
+    {
+      "id": "page-header",
+      "heading": "Ideias ousadas, espaços bem construídos"
+    },
+    {
+      "id": "showreel",
+      "video": { "alt": "Vídeo com projetos do escritório", "unsplashQuery": "modern architecture building" }
+    },
+    {
+      "id": "intro",
+      "text": "Somos um escritório de arquitetura que transforma ideias em espaços funcionais e bonitos."
+    },
+    {
+      "id": "services",
+      "heading": "O que fazemos",
+      "items": [
+        { "title": "Arquitetura residencial", "text": "[TODO]" },
+        { "title": "Arquitetura comercial", "text": "[TODO]" },
+        { "title": "Interiores", "text": "[TODO]" },
+        { "title": "Reformas", "text": "[TODO]" }
+      ],
+      "link": { "label": "Ver serviços", "href": "/servicos" }
+    },
+    {
+      "id": "work",
+      "items": [
+        { "title": "[TODO]", "text": "[TODO]", "image": { "alt": "Casa de concreto aparente", "unsplashQuery": "concrete house architecture" } },
+        { "title": "[TODO]", "text": "[TODO]", "image": { "alt": "Interior minimalista", "unsplashQuery": "minimalist interior architecture" } },
+        { "title": "[TODO]", "text": "[TODO]", "image": { "alt": "Fachada de prédio comercial", "unsplashQuery": "commercial building facade" } },
+        { "title": "[TODO]", "text": "[TODO]", "image": { "alt": "Escritório com madeira", "unsplashQuery": "wooden office interior" } },
+        { "title": "[TODO]", "text": "[TODO]", "image": { "alt": "Casa com grandes janelas", "unsplashQuery": "house large windows" } },
+        { "title": "[TODO]", "text": "[TODO]", "image": { "alt": "Escada escultural", "unsplashQuery": "architectural staircase" } }
+      ]
+    },
+    {
+      "id": "video-banner",
+      "video": { "alt": "Vídeo de obra em andamento", "unsplashQuery": "architect construction site" }
+    },
+    {
+      "id": "about",
+      "heading": "Um escritório pequeno e especializado",
+      "link": { "label": "Sobre", "href": "/sobre" }
+    },
+    {
+      "id": "insights",
+      "heading": "Artigos",
+      "items": [
+        { "title": "[TODO]", "image": { "alt": "Planta arquitetônica", "unsplashQuery": "architectural blueprint" } },
+        { "title": "[TODO]", "image": { "alt": "Maquete de projeto", "unsplashQuery": "architecture model" } },
+        { "title": "[TODO]", "image": { "alt": "Materiais de acabamento", "unsplashQuery": "material samples architecture" } }
+      ]
+    },
+    {
+      "id": "cta",
+      "heading": "Vamos projetar algo juntos?",
+      "cta": { "label": "Fale conosco", "href": "/contato" }
+    },
+    {
+      "id": "footer",
+      "socials": ["LinkedIn"],
+      "phone": "[TODO]",
+      "email": "[TODO]",
+      "copyright": "© [TODO] Traço Norte Arquitetura"
+    }
+  ]
+}

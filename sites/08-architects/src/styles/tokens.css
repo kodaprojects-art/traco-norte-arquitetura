@@ -1,0 +1,47 @@
+/* Site 08 tokens: palette/type from shared/tokens/08-architects.css (R8); spacing measured on the reference. */
+@import '../../../../shared/tokens/08-architects.css';
+
+:root {
+  --color-bg: var(--color-white);
+  --color-surface: var(--color-cool-50);
+  --color-text: var(--color-slate);
+  --color-muted: var(--color-grey-light);
+  --color-border: var(--color-cool-100);
+  --color-primary: var(--color-accent);
+  --color-accent-strong: #c45342; /* closest darker value of accent #f26651 for white text, AA 4.5:1 */
+  --color-on-primary: var(--color-white);
+  --color-focus: var(--color-slate-mid);
+
+  --font-body: "Cabin", system-ui, sans-serif; /* reference renders Cabin */
+  --font-heading: var(--font-body);
+  --text-sm: var(--text-1);
+  --text-base: var(--text-2);
+  --text-h1: clamp(2rem, 1.5rem + 1.6vw, 2.75rem);
+  --text-h3: clamp(1.5rem, 1.3rem + 0.6vw, 1.75rem);
+  --leading-body: 1.4;
+  --leading-heading: 1.2;
+
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1.25rem;
+  --space-lg: 2.5rem;
+  --space-xl: 5rem;
+  --space-section: clamp(4rem, 3rem + 4vw, 7.5rem);
+  --space-gutter: 1.25rem;
+  --container-max: 75rem;
+  --header-height: 4rem;
+
+  --border-width: 1px;
+  --radius-button: var(--radius-pill);
+  --radius-card: var(--radius-md);
+  --radius-panel: var(--radius-lg);
+  --radius-input: var(--radius-md);
+  --focus-width: 2px;
+  --focus-offset: 3px;
+
+  --duration-fast: 200ms;
+  --marquee-duration: 60s;
+  --opacity-hover: 0.85;
+  --z-header: 10;
+  --z-skip: 20;
+}

@@ -1,0 +1,180 @@
+---
+import '../styles/tokens.css';
+import '../styles/site.css';
+import BaseLayout from '../../../../shared/components/BaseLayout.astro';
+import Img from '../../../../shared/components/Img.astro';
+import content from '../content/site.json';
+
+import showreel from '../assets/showreel.jpg';
+import work1 from '../assets/work-1.jpg';
+import work2 from '../assets/work-2.jpg';
+import work3 from '../assets/work-3.jpg';
+import work4 from '../assets/work-4.jpg';
+import work5 from '../assets/work-5.jpg';
+import work6 from '../assets/work-6.jpg';
+import videoBanner from '../assets/video-banner.jpg';
+import insight1 from '../assets/insight-1.jpg';
+import insight2 from '../assets/insight-2.jpg';
+import insight3 from '../assets/insight-3.jpg';
+
+type Section = Record<string, any>;
+const sec = (id: string): Section => content.sections.find((s) => s.id === id) as Section;
+const banner = sec('top-banner');
+const header = sec('header');
+const pageHeader = sec('page-header');
+const reel = sec('showreel');
+const intro = sec('intro');
+const services = sec('services');
+const work = sec('work');
+const video = sec('video-banner');
+const about = sec('about');
+const insights = sec('insights');
+const cta = sec('cta');
+const footer = sec('footer');
+
+// Inner pages are out of scope: route links to the matching home section.
+const routes: Record<string, string> = { '/contato': '#contato', '/servicos': '#servicos', '/sobre': '#sobre' };
+const to = (href: string) => (href.includes('[TODO]') ? '#contato' : routes[href] ?? href);
+const navHrefs = ['#projetos', '#artigos', '#servicos', '#sobre'];
+const navLinks = header.links.map((label: string, i: number) => ({ label, href: navHrefs[i] }));
+const workImgs = [work1, work2, work3, work4, work5, work6];
+const insightImgs = [insight1, insight2, insight3];
+// Two marquee rows, as on the reference.
+const rows = [work.items.slice(0, 3).map((w: Section, i: number) => ({ ...w, img: workImgs[i] })), work.items.slice(3).map((w: Section, i: number) => ({ ...w, img: workImgs[i + 3] }))];
+---
+
+<BaseLayout title={content.seo.title} description={content.seo.description}>
+  <Fragment slot="head">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600&display=swap" /></noscript>
+  </Fragment>
+
+  <aside class="topbar" aria-label="Destaque" slot="header">
+    <p>{banner.text}</p>
+    <a href={to(banner.link.href)}>{banner.link.label} <span aria-hidden="true">↗</span></a>
+  </aside>
+  <header slot="header" class="nav">
+    <div class="nav__bar">
+      <a class="nav__brand" href="#main">{header.logoText}</a>
+      <nav aria-label="Principal">
+        <ul class="nav__links" id="menu-mobile">
+          {navLinks.map((l: { label: string; href: string }) => <li><a href={l.href}>{l.label}</a></li>)}
+          <li><a class="pill pill--accent" href={to(header.cta.href)}>{header.cta.label}</a></li>
+        </ul>
+      </nav>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu-mobile">
+        <span class="visually-hidden">Abrir menu</span>
+        <span class="nav__burger" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="page-header container">
+    <h1>{pageHeader.heading}</h1>
+  </section>
+
+  <section class="container" aria-label="Vídeo">
+    <Img src={showreel} alt={reel.video.alt} class="showreel" priority sizes="(min-width: 1200px) 75rem, 100vw" />
+  </section>
+
+  <section class="intro container" id="servicos" aria-labelledby="servicos-title">
+    <div>
+      <p class="intro__text">{intro.text}</p>
+      <h2 id="servicos-title" class="visually-hidden">{services.heading}</h2>
+    </div>
+    <div class="services">
+      {services.items.map((s: Section) => (
+        <details class="service">
+          <summary>{s.title}<svg class="service__arrow" aria-hidden="true" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 4 4 12M4 6v6h6" /></svg></summary>
+          <p>{s.text}</p>
+          <a class="pill" href={to(services.link.href)}>{services.link.label} <span aria-hidden="true">↗</span></a>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="work" id="projetos" aria-label="Projetos">
+    {rows.map((row, r) => (
+      <div class:list={['marquee', { 'marquee--reverse': r === 1 }]}>
+        <ul class="marquee__track">
+          {[...row, ...row].map((w: Section, i: number) => (
+            <li class="work-card" aria-hidden={i >= row.length ? 'true' : undefined}>
+              <a href="#projetos" tabindex={i >= row.length ? -1 : undefined}>
+                <Img src={w.img} alt={w.image.alt} class="work-card__img" sizes="22rem" />
+                <span class="work-card__info">
+                  <span class="work-card__title">{w.title}</span>
+                  <span>{w.text}</span>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </section>
+
+  <section class="container" aria-label="Vídeo da obra">
+    <Img src={videoBanner} alt={video.video.alt} class="video-banner" sizes="(min-width: 1200px) 75rem, 100vw" />
+  </section>
+
+  <section class="about container" id="sobre" aria-labelledby="sobre-title">
+    <h2 id="sobre-title">{about.heading}</h2>
+    <p class="muted">[TODO]</p>
+    <a class="pill" href="#sobre">{about.link.label} <span aria-hidden="true">↗</span></a>
+  </section>
+
+  <section class="insights container" id="artigos" aria-labelledby="artigos-title">
+    <div class="insights__head">
+      <h2 id="artigos-title">{insights.heading}</h2>
+      <a class="pill pill--outline" href="#artigos">{insights.heading} <span aria-hidden="true">↗</span></a>
+    </div>
+    <ul class="insights__grid">
+      {insights.items.map((it: Section, i: number) => (
+        <li>
+          <Img src={insightImgs[i]} alt={it.image.alt} class="insight__img" sizes="(min-width: 810px) 24rem, 100vw" />
+          <h3>{it.title}</h3>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="cta container" id="contato" aria-labelledby="contato-title">
+    <div class="cta__card">
+      <h2 id="contato-title">{cta.heading}</h2>
+      <a class="pill" href={`mailto:${footer.email}`}>{cta.cta.label} <span aria-hidden="true">↗</span></a>
+    </div>
+    <Img src={work5} alt="" class="cta__img" sizes="(min-width: 810px) 50rem, 100vw" />
+  </section>
+
+  <footer slot="footer" class="footer container">
+    <div class="footer__card">
+      <p class="footer__brand">{header.logoText}</p>
+      <p class="footer__line">{intro.text}</p>
+      <ul class="footer__contact">
+        <li>{footer.phone}</li>
+        <li>{footer.email}</li>
+        {footer.socials.map((s: string) => <li><a href="#main">{s}</a></li>)}
+      </ul>
+      <p class="footer__copy">{footer.copyright}</p>
+    </div>
+  </footer>
+
+</BaseLayout>
+
+<script>
+  // Mobile menu
+  const toggle = document.querySelector<HTMLButtonElement>('.nav__toggle')!;
+  const nav = document.querySelector<HTMLElement>('.nav')!;
+  const setMenu = (open: boolean) => {
+    toggle.setAttribute('aria-expanded', String(open));
+    nav.classList.toggle('is-open', open);
+  };
+  toggle.addEventListener('click', () => setMenu(toggle.getAttribute('aria-expanded') !== 'true'));
+  nav.addEventListener('click', (e) => { if ((e.target as Element).closest('.nav__links a')) setMenu(false); });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav.classList.contains('is-open')) { setMenu(false); toggle.focus(); }
+  });
+
+</script>

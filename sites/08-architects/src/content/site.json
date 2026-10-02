@@ -8,8 +8,8 @@
   "sections": [
     {
       "id": "top-banner",
-      "text": "Conheça nosso serviço de [TODO]",
-      "link": { "label": "Saiba mais", "href": "[TODO]" }
+      "text": "Conheça nosso serviço de projeto de interiores",
+      "link": { "label": "Saiba mais", "href": "/servicos" }
     },
     {
       "id": "header",
@@ -33,22 +33,22 @@
       "id": "services",
       "heading": "O que fazemos",
       "items": [
-        { "title": "Arquitetura residencial", "text": "[TODO]" },
-        { "title": "Arquitetura comercial", "text": "[TODO]" },
-        { "title": "Interiores", "text": "[TODO]" },
-        { "title": "Reformas", "text": "[TODO]" }
+        { "title": "Arquitetura residencial", "text": "Casas pensadas para a rotina de cada família, do estudo inicial à obra." },
+        { "title": "Arquitetura comercial", "text": "Lojas, escritórios e consultórios que fortalecem a marca e o atendimento." },
+        { "title": "Interiores", "text": "Layout, marcenaria e iluminação para ambientes funcionais e acolhedores." },
+        { "title": "Reformas", "text": "Atualizamos espaços existentes com planejamento e acompanhamento de obra." }
       ],
       "link": { "label": "Ver serviços", "href": "/servicos" }
     },
     {
       "id": "work",
       "items": [
-        { "title": "[TODO]", "text": "[TODO]", "image": { "alt": "Casa de concreto aparente", "unsplashQuery": "concrete house architecture" } },
-        { "title": "[TODO]", "text": "[TODO]", "image": { "alt": "Interior minimalista", "unsplashQuery": "minimalist interior architecture" } },
-        { "title": "[TODO]", "text": "[TODO]", "image": { "alt": "Fachada de prédio comercial", "unsplashQuery": "commercial building facade" } },
-        { "title": "[TODO]", "text": "[TODO]", "image": { "alt": "Escritório com madeira", "unsplashQuery": "wooden office interior" } },
-        { "title": "[TODO]", "text": "[TODO]", "image": { "alt": "Casa com grandes janelas", "unsplashQuery": "house large windows" } },
-        { "title": "[TODO]", "text": "[TODO]", "image": { "alt": "Escada escultural", "unsplashQuery": "architectural staircase" } }
+        { "title": "Casa Jaqueira", "text": "Residência unifamiliar em concreto aparente, Recife, 2025.", "image": { "alt": "Casa de concreto aparente", "unsplashQuery": "concrete house architecture" } },
+        { "title": "Apartamento Boa Viagem", "text": "Interiores minimalistas para apartamento de 90 m², 2024.", "image": { "alt": "Interior minimalista", "unsplashQuery": "minimalist interior architecture" } },
+        { "title": "Edifício Capibaribe", "text": "Fachada e áreas comuns de prédio comercial, 2024.", "image": { "alt": "Fachada de prédio comercial", "unsplashQuery": "commercial building facade" } },
+        { "title": "Escritório Madeira", "text": "Sede de escritório com marcenaria sob medida, 2023.", "image": { "alt": "Escritório com madeira", "unsplashQuery": "wooden office interior" } },
+        { "title": "Casa das Janelas", "text": "Residência com grandes aberturas e ventilação cruzada, 2023.", "image": { "alt": "Casa com grandes janelas", "unsplashQuery": "house large windows" } },
+        { "title": "Loft Escada", "text": "Reforma de loft com escada escultural em aço, 2022.", "image": { "alt": "Escada escultural", "unsplashQuery": "architectural staircase" } }
       ]
     },
     {
@@ -64,9 +64,9 @@
       "id": "insights",
       "heading": "Artigos",
       "items": [
-        { "title": "[TODO]", "image": { "alt": "Planta arquitetônica", "unsplashQuery": "architectural blueprint" } },
-        { "title": "[TODO]", "image": { "alt": "Maquete de projeto", "unsplashQuery": "architecture model" } },
-        { "title": "[TODO]", "image": { "alt": "Materiais de acabamento", "unsplashQuery": "material samples architecture" } }
+        { "title": "Como ler uma planta arquitetônica", "image": { "alt": "Planta arquitetônica", "unsplashQuery": "architectural blueprint" } },
+        { "title": "Por que a maquete ainda importa", "image": { "alt": "Maquete de projeto", "unsplashQuery": "architecture model" } },
+        { "title": "Escolhendo acabamentos para o clima do Nordeste", "image": { "alt": "Materiais de acabamento", "unsplashQuery": "material samples architecture" } }
       ]
     },
     {
@@ -77,9 +77,9 @@
     {
       "id": "footer",
       "socials": ["LinkedIn"],
-      "phone": "[TODO]",
-      "email": "[TODO]",
-      "copyright": "© [TODO] Traço Norte Arquitetura"
+      "phone": "(81) 4000-0000",
+      "email": "contato@traconortearquitetura.com.br",
+      "copyright": "© 2026 Traço Norte Arquitetura"
     }
   ]
 }

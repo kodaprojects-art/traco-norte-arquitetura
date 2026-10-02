@@ -34,7 +34,7 @@ const footer = sec('footer');
 
 // Inner pages are out of scope: route links to the matching home section.
 const routes: Record<string, string> = { '/contato': '#contato', '/servicos': '#servicos', '/sobre': '#sobre' };
-const to = (href: string) => (href.includes('[TODO]') ? '#contato' : routes[href] ?? href);
+const to = (href: string) => routes[href] ?? href;
 const navHrefs = ['#projetos', '#artigos', '#servicos', '#sobre'];
 const navLinks = header.links.map((label: string, i: number) => ({ label, href: navHrefs[i] }));
 const workImgs = [work1, work2, work3, work4, work5, work6];
@@ -121,7 +121,7 @@ const rows = [work.items.slice(0, 3).map((w: Section, i: number) => ({ ...w, img
 
   <section class="about container" id="sobre" aria-labelledby="sobre-title">
     <h2 id="sobre-title">{about.heading}</h2>
-    <p class="muted">[TODO]</p>
+    <p class="muted">Somos uma equipe de cinco arquitetos em Recife, dedicada a projetos residenciais e comerciais com atenção a cada detalhe, do primeiro traço à entrega da obra.</p>
     <a class="pill" href="#sobre">{about.link.label} <span aria-hidden="true">↗</span></a>
   </section>
 
@@ -155,7 +155,7 @@ const rows = [work.items.slice(0, 3).map((w: Section, i: number) => ({ ...w, img
       <ul class="footer__contact">
         <li>{footer.phone}</li>
         <li>{footer.email}</li>
-        {footer.socials.map((s: string) => <li><a href="#main">{s}</a></li>)}
+        {footer.socials.map((s: string) => <li><a href="#">{s}</a></li>)}
       </ul>
       <p class="footer__copy">{footer.copyright}</p>
     </div>

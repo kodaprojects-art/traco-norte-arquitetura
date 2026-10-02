@@ -1,8 +1,8 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  // [TODO] set the production URL per site (used for canonical and Open Graph URLs).
-  site: 'https://example.com',
+  // Production URL (used for canonical and Open Graph URLs).
+  site: 'https://traco-norte-arquitetura.vercel.app',
   output: 'static',
   build: { inlineStylesheets: 'always' },
   image: { layout: 'constrained', responsiveStyles: false },
